@@ -20,7 +20,7 @@ const StoreContextProvider = ({ children }) => {
     if (token) {
       // alert('hello')
       await axios.post(
-        "http://localhost:4000/api/cart/add",
+        "https://food-delivery-as2s.onrender.com/api/cart/add",
         {
           itemId,
         },
@@ -38,7 +38,7 @@ const StoreContextProvider = ({ children }) => {
 
     if (token) {
       await axios.post(
-        "http://localhost:4000/api/cart/remove",
+        "https://food-delivery-as2s.onrender.com/api/cart/remove",
         {
           itemId,
         },
@@ -72,7 +72,7 @@ const StoreContextProvider = ({ children }) => {
     const fetchFoodList = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/food/list",
+          "https://food-delivery-as2s.onrender.com/api/food/list",
           {
             withCredentials: true,
           }
@@ -87,7 +87,7 @@ const StoreContextProvider = ({ children }) => {
 
     const loadCartDataofUser = async () => {
       if (token) {
-        const response = await axios.get("http://localhost:4000/api/cart/get", {
+        const response = await axios.get("https://food-delivery-as2s.onrender.com/api/cart/get", {
           headers: {
             token,
           },

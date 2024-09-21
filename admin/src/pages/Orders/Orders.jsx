@@ -14,7 +14,7 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/order/list");
+      const res = await axios.get("https://food-delivery-as2s.onrender.com/api/order/list");
       setOrders(res.data.orders);
     } catch (error) {
       console.log(error);
@@ -26,7 +26,7 @@ const Orders = () => {
 
     try{
 
-      const res = await axios.post(`http://localhost:4000/api/order/status`,{
+      const res = await axios.post(`https://food-delivery-as2s.onrender.com/api/order/status`,{
         orderId,
         status:e.target.value
       }, {

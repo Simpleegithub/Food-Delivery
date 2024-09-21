@@ -10,7 +10,7 @@ const List = () => {
 
   useEffect(() => {
     const fetchList = async () => {
-      const res = await axios.get("http://localhost:4000/api/food/list");
+      const res = await axios.get("https://food-delivery-as2s.onrender.com/api/food/list");
       if (res.status === 200) {
         setList(res.data.foods);
       } else {
@@ -23,7 +23,7 @@ const List = () => {
 
   const handleDelete = async (id) => {
   try{
-    const res = await axios.delete(`http://localhost:4000/api/food/remove/${id}`);
+    const res = await axios.delete(`https://food-delivery-as2s.onrender.com/api/food/remove/${id}`);
     if(res.status === 200){
       toast.success(res.data.message);
       setList(list.filter((item) => item._id !== id));

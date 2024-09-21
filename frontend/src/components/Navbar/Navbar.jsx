@@ -13,7 +13,7 @@ const Navbar = ({ setShowLogin }) => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/user/logout', {
+      const res = await axios.get('https://food-delivery-as2s.onrender.com/api/user/logout', {
         withCredentials: true,
       });
 

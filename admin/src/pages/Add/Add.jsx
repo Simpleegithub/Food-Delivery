@@ -38,7 +38,7 @@ const Add = () => {
       formData.append("image", image);
 
       const res = await axios.post(
-        "http://localhost:4000/api/food/add",
+        "https://food-delivery-as2s.onrender.com/api/food/add",
         formData
       );
 
