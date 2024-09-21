@@ -16,16 +16,25 @@ import OrderRouter from './Routes/OrderRoute.js';
 dotenv.config();
 
 const app = express();
+const allowedOrigins = [
+  'https://food-delivery-frontend-7x3f.onrender.com',
+  'https://food-delivery-admin-5brw.onrender.com', // Add more origins as needed
+];
 
 // Middleware
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
-  // add mutiple origin
-    origin: "https://food-delivery-frontend-7x3f.onrender.com", 
-     // Change this to match your frontend URL
-    credentials: true  // Allow credentials (cookies) to be sent
-  }));
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS')); // Reject the request
+    }
+  },
+  credentials: true, // Allow credentials (cookies) to be sent
+}));
 
 // Database connction
 connectDB()
