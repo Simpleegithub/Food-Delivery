@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
   // add mutiple origin
-    origin: "http://localhost:5174", 
+    origin: "https://food-delivery-frontend-7x3f.onrender.com/", 
      // Change this to match your frontend URL
     credentials: true  // Allow credentials (cookies) to be sent
   }));
