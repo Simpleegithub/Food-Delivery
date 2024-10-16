@@ -51,7 +51,7 @@ const PlaceOrder = () => {
     };
 
     const res = await axios.post(
-      "http://localhost:4000/api/order/place",
+      "https://food-delivery-as2s.onrender.com/api/order/place",
       OrderData,
       {
         headers: {
