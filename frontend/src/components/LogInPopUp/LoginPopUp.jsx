@@ -25,7 +25,7 @@ export const LoginPopUp = ({setShowLogin}) => {
         e.preventDefault();
       if(currState === "Sign Up"){
           try{
-            const res=await axios.post("http://localhost:4000/api/user/register",{
+            const res=await axios.post("https://food-delivery-as2s.onrender.com/api/user/register",{
                 name:data.name,
                 email:data.email,
                 password:data.password
@@ -46,7 +46,7 @@ export const LoginPopUp = ({setShowLogin}) => {
 
       if(currState === "Log In"){
         try{
-          const res=await axios.post("http://localhost:4000/api/user/login",{
+          const res=await axios.post("https://food-delivery-as2s.onrender.com/api/user/login",{
               email:data.email,
               password:data.password
           },{
